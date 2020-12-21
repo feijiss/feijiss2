@@ -10,6 +10,13 @@
 
 </style>
 <body>
+    <input class="liwubao" value="礼物包" type="button">
+    <br>
+    <div style="float: right;margin-top: 30px;">
+    <div id="lwlist">
+       
+    </div>
+</div>
     <div style="display: flex;justify-content: center;">
 
     
@@ -18,7 +25,9 @@
     <div class="div2"></div>
     <div class="div3"></div>
 </div>
+
     <div class="wrap">
+      
         <div class="title">圣诞抽抽乐</div>
         <span>抽奖次数<strong id="count">0</strong></span>
         <div class="box">
@@ -70,8 +79,16 @@
     <div id="root"></div>
 </div>
 </div>
-
+    <script src="./js/template-web.js"></script>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/html" id="temp">
+        {{each item}}
+        
+
+            <li>{{$value}}</li>
+        
+        {{/each}}
+    </script>
     <script type="text/javascript">
     var wd=0;
     var choujiang=0
@@ -247,12 +264,15 @@ function run(el, path, n = 1, speed = 60, i = 0, len = path.length) {
 * @param {number} len 路径的长度
 * @param {number} random 中奖坐标
 */
+
 function run(el, path, n = 1, speed = 60, i = 0, len = path.length, random = Math.floor(Math.random() * len)) {
     setTimeout(() => {
         if(n > 0) {
           // 如果n为1,则设置中奖数值
           if(n === 1) {
             len = random
+            zj=random
+            console.log(zj)
           }
           if(len <= i) {
               i = n === 1 ? len : 0
@@ -265,7 +285,7 @@ function run(el, path, n = 1, speed = 60, i = 0, len = path.length, random = Mat
     }, speed)   
 }
 // 防抖函数,避免频繁点击执行多次函数
-function debounce(fn, interval = 300) {
+ function debounce(fn, interval = 300) {
   let timeout = null
   return function () {
       clearTimeout(timeout)
@@ -275,19 +295,70 @@ function debounce(fn, interval = 300) {
   }
 }
 
-var num=0
+
+        var zj;
+        var lwItem=[]
+        
         // // 点击开始按钮,开始抽奖
         // $('.start').on('click',debounce(() => { run($('.spin'), generateCirclePath(3, 100), 3) }))
 $('.start').on('click',debounce(() => { 
     if(choujiang==0){
        alert('抽奖次数用完了!')
     }else{
-        run($('.spin'), generateCirclePath(3, 100), 3)
-        num++
-        console.log("num"+num+' '+"choujiang"+choujiang)
+run($('.spin'), generateCirclePath(3, 100), 3)
+        setTimeout(() => {
+            switch(zj){
+                 case 0:
+                console.log(zj)
+                 break;
+                 case 1:
+                 console.log(zj)
+                 break;
+                 case 2:
+                 console.log(zj)
+                 break;
+                 case 3:
+                 console.log(zj)
+                 break;
+                 case 4:
+                 console.log(zj)
+                 break;
+                 case 5:
+                 console.log(zj)
+                 break;
+                 case 6:
+                 console.log(zj)
+                 break;
+                 case 7:
+                 console.log(zj)
+                 break;
+            }
+            lwItem.push(zj)
+            var html= template('temp',{item:lwItem})
+              $('#lwlist').html(html)
+        }, 4000);
         count(--choujiang)
     }
      }))
+$('.liwubao').on('click',function(){
+    console.log(lwItem)
+    if(lwItem.length==0){
+alert('礼物包是空的！')
+   }else{
+    if($(this).attr('value')=='礼物包'){
+        var html= template('temp',{item:lwItem})
+   $('#lwlist').html(html)
+   $(this).val('关闭')
+   $('#lwlist').css('display','block')
+    }else{
+        $(this).val('礼物包')
+        $('#lwlist').css('display','none')
+    }
+   }
+   
+    
+   
+})
 
 </script>
 </body>
