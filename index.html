@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/圣诞节.css" />
+</head>
+<style type="text/css">
+
+</style>
+<body>
+    <div style="display: flex;justify-content: center;">
+
+    
+        <div class="shengdanshu">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+    <div class="wrap">
+        <div class="title">圣诞抽抽乐</div>
+        <span>抽奖次数<strong id="count">0</strong></span>
+        <div class="box">
+            <div class="item">我</div>
+            <div class="item">我</div>
+            <div class="item">请求</div>
+            <div class="item">我</div>
+            <div class="item start" >开始</div>
+            <div class="item">我</div>
+            <div class="item">见</div>
+            <div class="item">谢谢</div>
+            <div class="item">你</div>
+            <div class="spin"></div>
+        </div>
+   
+   
+    </div>
+    <div class="shengdanshu">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </div>
+</div>
+<div style="text-align: center;">
+    <h1>玩法指南</h1>
+    <img id="wd" width="100px" src="./image/剪刀.png">
+    <div>
+    <img id="jiandao" width="100px" src="./image/剪刀.png">
+    <img id="shitou" width="100px" src="./image/石头.png">
+    <img id="bu" width="100px" src="./image/布.png">
+</div> 
+    <span>点击石头剪刀布赢一局可以获得一个抽奖次数，一共五局</span>
+    
+</div>
+<div style="width: 100%; text-align: center;">
+<img width="300px" src="http://img1.juimg.com/180108/355779-1P10Q5595678.jpg">
+<img width="300px"  src="http://pic.90sjimg.com/design/00/78/05/88/58e99cfa692a7.png!/fwfh/804x958/quality/90/unsharp/true/compress/true">
+<div id="containleft">
+    <div id="top1"></div>
+    <div id="mid1"></div>
+    <div id="bot1"></div>
+    <div id="root"></div>
+</div>
+
+<div id="containright">
+    <div id="top1"></div>
+    <div id="mid1"></div>
+    <div id="bot1"></div>
+    <div id="root"></div>
+</div>
+</div>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    var wd=0;
+    var choujiang=0
+   $('#jiandao').on("click",function(){
+    wd=Math.floor(Math.random()*3)
+    setImg(wd)
+   panduan0(wd)
+   })
+   $('#shitou').on("click",function(){
+   wd=Math.floor(Math.random()*3)
+    setImg(wd)
+    panduan1(wd)
+   })
+   $('#bu').on("click",function(){
+    wd=Math.floor(Math.random()*3)
+    setImg(wd)
+    panduan2(wd)
+   })
+   function setImg(wd){
+    switch(wd){
+    case 0:
+    $('#wd').attr('src','./image/剪刀.png')
+    break;
+    case 1:
+    $('#wd').attr('src','./image/石头.png')
+    break;
+    case 2:
+    $('#wd').attr('src','./image/布.png')
+    break;
+ }
+}
+   function panduan0(wd){
+    switch(wd){
+       case 0:
+       alert('平局')
+       break;
+       case 1:
+       alert('输了')
+       break;
+       case 2:
+       choujiang++
+       alert('赢了'+choujiang)
+       count(choujiang)
+       break;
+    }
+ }
+ function panduan1(wd){
+    switch(wd){
+       case 0:
+       choujiang++
+       alert('赢了'+choujiang)
+       count(choujiang)
+       break;
+       case 1:
+       alert('平局')
+       break;
+       case 2:
+       alert('输了')
+       break;
+    }
+ }
+ function panduan2(wd){
+    switch(wd){
+       case 0:
+       alert('输了')
+       break;
+       case 1:
+       choujiang++
+       alert('赢了'+choujiang)
+       count(choujiang)
+       break;
+       case 2:
+       alert('平局')
+       break;
+    }
+ }  
+ function count(count){
+     $('#count').text(count)
+ }
+ (function($){
+	$.fn.snow = function(options){
+	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+	documentHeight 	= $(document).height(),
+	documentWidth	= $(document).width(),
+	defaults = {
+		minSize		: 10,
+		maxSize		: 20,
+		newOn		: 1000,
+		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+	},
+	options	= $.extend({}, defaults, options);
+	var interval= setInterval( function(){
+	var startPositionLeft = Math.random() * documentWidth - 100,
+	startOpacity = 0.5 + Math.random(),
+	sizeFlake = options.minSize + Math.random() * options.maxSize,
+	endPositionTop = documentHeight - 200,
+	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	durationFall = documentHeight * 10 + Math.random() * 5000;
+	$flake.clone().appendTo('body').css({
+		left: startPositionLeft,
+		opacity: startOpacity,
+		'font-size': sizeFlake,
+		color: options.flakeColor
+	}).animate({
+		top: endPositionTop,
+		left: endPositionLeft,
+		opacity: 0.2
+	},durationFall,'linear',function(){
+		$(this).remove()
+	});
+	}, options.newOn);
+    };
+})(jQuery);
+$(function(){
+    $.fn.snow({ 
+	    minSize: 5, /* 定义雪花最小尺寸 */
+	    maxSize: 50,/* 定义雪花最大尺寸 */
+	    newOn: 100  /* 定义密集程度，数字越小越密集 */
+    });
+});
+    /**
+ * 生成n维环形坐标
+ * @param {number} n 维度
+ * @param {number} cell 单位坐标长度
+ */
+function generateCirclePath(n, cell) {
+  let arr = []
+  for(let i=0; i< n; i++) {
+      arr.push([i*cell, 0])
+  }
+  for(let i=0; i< n-1; i++) {
+      arr.push([(n-1)*cell, (i+1)*cell])
+  }
+  for(let i=0; i< n-1; i++) {
+      arr.push([(n-i-2)*cell, (n-1)*cell])
+  }
+  for(let i=0; i< n-2; i++) {
+      arr.push([0, (n-i-2)*cell])
+  }
+  return arr
+}
+function run(el, path, n = 1, i = 0, len = path.length) {
+    setTimeout(() => {
+        if(n > 0) {
+          if(len <= i) {
+              i = n === 1 ? len : 0
+              n--
+          }
+          el.css('transform', `translate(${path[i][0]}px, ${path[i][1]}px)`)
+          run(el, path, n, ++i, len)
+        }
+    }, 300)   
+}
+function run(el, path, n = 1, speed = 60, i = 0, len = path.length) {
+    setTimeout(() => {
+        if(n > 0) {
+          if(len <= i) {
+              i = n === 1 ? len : 0
+              n--
+              speed += (300 - speed) / n
+          }
+          el.css('transform', `translate(${path[i][0]}px, ${path[i][1]}px)`)
+          run(el, path, n, speed, ++i, len)
+        }
+    }, speed)   
+}
+/**
+* 环形随机轨道运动函数
+* @param {element} el 运动的dom元素
+* @param {array} path 运动的环形坐标集合
+* @param {number} speed 运动的初始速度
+* @param {number} i 运动的初始位置
+* @param {number} len 路径的长度
+* @param {number} random 中奖坐标
+*/
+function run(el, path, n = 1, speed = 60, i = 0, len = path.length, random = Math.floor(Math.random() * len)) {
+    setTimeout(() => {
+        if(n > 0) {
+          // 如果n为1,则设置中奖数值
+          if(n === 1) {
+            len = random
+          }
+          if(len <= i) {
+              i = n === 1 ? len : 0
+              n--
+              speed += (300 - speed) / n
+          }
+          el.css('transform', `translate(${path[i][0]}px, ${path[i][1]}px)`)
+          run(el, path, n, speed, ++i, len, random)
+        }
+    }, speed)   
+}
+// 防抖函数,避免频繁点击执行多次函数
+function debounce(fn, interval = 300) {
+  let timeout = null
+  return function () {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+          fn.apply(this, arguments)
+      }, interval)
+  }
+}
+
+var num=0
+        // // 点击开始按钮,开始抽奖
+        // $('.start').on('click',debounce(() => { run($('.spin'), generateCirclePath(3, 100), 3) }))
+$('.start').on('click',debounce(() => { 
+    if(choujiang==0){
+       alert('抽奖次数用完了!')
+    }else{
+        run($('.spin'), generateCirclePath(3, 100), 3)
+        num++
+        console.log("num"+num+' '+"choujiang"+choujiang)
+        count(--choujiang)
+    }
+     }))
+
+</script>
+</body>
+</html>
