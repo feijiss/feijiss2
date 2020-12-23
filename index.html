@@ -104,7 +104,7 @@ var wd=0;
  console.log(thisURL.indexOf('&'))
  if(thisURL.indexOf('&')!=-1){
 var getVal = thisURL.split("?")[1];
- var num=thisURL.split("?")[1].split("&")[1]
+ var num=getVal.split("&")[0]
  var money=getVal.split("&")[1]
         console.log(getVal); 
         console.log(num);
