@@ -11,6 +11,7 @@
 
 </style>
 <body>
+    <embed src="sdj.mp3" hidden="true" autostart="true" loop="true">
     <input class="liwubao" value="礼物包" type="button">
     <br>
     <div style="float: right;margin-top: 30px;">
@@ -239,7 +240,7 @@ var html= template('temp',{item:lwItem})
      $('#count').text(count)
  }
  $('#hb').on('click',function(){
-     
+
         window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
         alert(lwItem)
     })
