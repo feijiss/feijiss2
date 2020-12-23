@@ -108,7 +108,7 @@ var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
  var money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
- lwItem=lw
+ lwItem=lw.replace(",", ""); 
         console.log(getVal); 
         console.log(num);
         console.log(money);
@@ -116,6 +116,8 @@ var getVal = thisURL.split("?")[1];
      choujiang=num
 count(choujiang)
 console.log(zj)
+var html= template('temp',{item:lwItem})
+              $('#lwlist').html(html)
  }
 
 
