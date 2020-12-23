@@ -106,10 +106,12 @@ var wd=0;
  if(thisURL.indexOf('&')!=-1){
 var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
- var money=getVal.split("&")[1]
+ var money=getVal.split("&")[1].split("l")[0]
+ var lw=getVal.split("&")[1].split("l")[1]
         console.log(getVal); 
         console.log(num);
         console.log(money);
+        console.log(lw);
      choujiang=num
 count(choujiang)
 console.log(zj)
