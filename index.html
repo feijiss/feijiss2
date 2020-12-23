@@ -97,7 +97,8 @@
 
 var wd=0;
     var choujiang=0
-
+    var zj;
+        var lwItem=[]
    var thisURL = decodeURI(document.URL);
   console.log(thisURL)	// 获取当前页面的 url, 用decodeURI() 解码
  
@@ -111,6 +112,7 @@ var getVal = thisURL.split("?")[1];
         console.log(money);
      choujiang=num
 count(choujiang)
+console.log(zj)
  }
 
 
@@ -364,8 +366,7 @@ function run(el, path, n = 1, speed = 60, i = 0, len = path.length, random = Mat
 }
 
 
-        var zj;
-        var lwItem=[]
+        
         
         // // 点击开始按钮,开始抽奖
         // $('.start').on('click',debounce(() => { run($('.spin'), generateCirclePath(3, 100), 3) }))
