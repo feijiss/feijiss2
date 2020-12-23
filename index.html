@@ -60,12 +60,15 @@
     <img id="shitou" width="100px" src="./image/石头.png">
     <img id="bu" width="100px" src="./image/布.png">
 </div> 
+<button id="hb">红包</button>
+
     <span>点击石头剪刀布赢一局可以获得一个抽奖次数，一共五局</span>
     
 </div>
 <div style="width: 100%; text-align: center;">
- <img width="300px"  src="http://pic.90sjimg.com/design/00/78/05/88/58e99cfa692a7.png!/fwfh/804x958/quality/90/unsharp/true/compress/true">
- <img width="300px" src="http://img1.juimg.com/180108/355779-1P10Q5595678.jpg">
+
+<img width="300px"  src="http://pic.90sjimg.com/design/00/78/05/88/58e99cfa692a7.png!/fwfh/804x958/quality/90/unsharp/true/compress/true">
+<img width="300px" src="http://img1.juimg.com/180108/355779-1P10Q5595678.jpg">
 <div id="containleft">
     <div id="top1"></div>
     <div id="mid1"></div>
@@ -91,33 +94,86 @@
         {{/each}}
     </script>
     <script type="text/javascript">
-    var wd=0;
+
+var wd=0;
     var choujiang=0
+
+   var thisURL = decodeURI(document.URL);	// 获取当前页面的 url, 用decodeURI() 解码
+ var getVal = thisURL.split("?")[1];
+ var num=getVal.split("&")[0]
+ var money=getVal.split("&")[1]
+        console.log(getVal);
+        console.log(num);
+        console.log(money);
+     choujiang=num
+count(choujiang)
+
+   
    $('#jiandao').on("click",function(){
     wd=Math.floor(Math.random()*3)
     setImg(wd)
-   panduan0(wd)
+    setTimeout(() => {
+        panduan0(wd)
+    }, 4000);
+   
    })
    $('#shitou').on("click",function(){
    wd=Math.floor(Math.random()*3)
     setImg(wd)
-    panduan1(wd)
+    setTimeout(() => {
+        panduan1(wd)
+    }, 4000);
    })
    $('#bu').on("click",function(){
     wd=Math.floor(Math.random()*3)
     setImg(wd)
-    panduan2(wd)
+    setTimeout(() => {
+        panduan2(wd)
+    }, 4000);
    })
    function setImg(wd){
     switch(wd){
     case 0:
-    $('#wd').attr('src','./image/剪刀.png')
+        setTimeout(() => {
+            $('#wd').attr('src','./image/石头.png')
+        }, 800);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/剪刀.png')
+        }, 1600);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/布.png')
+        }, 2400);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/剪刀.png')
+        }, 3200);
     break;
     case 1:
-    $('#wd').attr('src','./image/石头.png')
+    setTimeout(() => {
+            $('#wd').attr('src','./image/石头.png')
+        }, 800);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/剪刀.png')
+        }, 1600);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/布.png')
+        }, 2400);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/石头.png')
+        }, 3200);
     break;
     case 2:
-    $('#wd').attr('src','./image/布.png')
+    setTimeout(() => {
+            $('#wd').attr('src','./image/石头.png')
+        }, 800);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/布.png')
+        }, 1600);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/剪刀.png')
+        }, 2400);
+        setTimeout(() => {
+            $('#wd').attr('src','./image/布.png')
+        }, 3200);
     break;
  }
 }
@@ -169,7 +225,52 @@
  function count(count){
      $('#count').text(count)
  }
+ $('#hb').on('click',function(){
+        window.location.href = encodeURI("./hb.html?value=" + choujiang);
+    })
 
+    
+//  (function($){
+// 	$.fn.snow = function(options){
+// 	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+// 	documentHeight 	= $(document).height(),
+// 	documentWidth	= $(document).width(),
+// 	defaults = {
+// 		minSize		: 10,
+// 		maxSize		: 20,
+// 		newOn		: 1000,
+// 		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+// 	},
+// 	options	= $.extend({}, defaults, options);
+// 	var interval= setInterval( function(){
+// 	var startPositionLeft = Math.random() * documentWidth - 100,
+// 	startOpacity = 0.5 + Math.random(),
+// 	sizeFlake = options.minSize + Math.random() * options.maxSize,
+// 	endPositionTop = documentHeight - 200,
+// 	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+// 	durationFall = documentHeight * 10 + Math.random() * 5000;
+// 	$flake.clone().appendTo('body').css({
+// 		left: startPositionLeft,
+// 		opacity: startOpacity,
+// 		'font-size': sizeFlake,
+// 		color: options.flakeColor
+// 	}).animate({
+// 		top: endPositionTop,
+// 		left: endPositionLeft,
+// 		opacity: 0.2
+// 	},durationFall,'linear',function(){
+// 		$(this).remove()
+// 	});
+// 	}, options.newOn);
+//     };
+// })(jQuery);
+// $(function(){
+//     $.fn.snow({ 
+// 	    minSize: 5, /* 定义雪花最小尺寸 */
+// 	    maxSize: 50,/* 定义雪花最大尺寸 */
+// 	    newOn: 500  /* 定义密集程度，数字越小越密集 */
+//     });
+// });
     /**
  * 生成n维环形坐标
  * @param {number} n 维度
