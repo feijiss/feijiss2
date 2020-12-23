@@ -98,15 +98,16 @@
 var wd=0;
     var choujiang=0
 
-   var thisURL = decodeURI(document.URL);	// 获取当前页面的 url, 用decodeURI() 解码
- var getVal = thisURL.split("?")[1];
- var num=getVal.split("&")[0]
- var money=getVal.split("&")[1]
-        console.log(getVal); 
-        console.log(num);
-        console.log(money);
-     choujiang=num
-count(choujiang)
+   var thisURL = decodeURI(document.URL);
+  console.log(thisURL)	// 获取当前页面的 url, 用decodeURI() 解码
+//  var getVal = thisURL.split("?")[1];
+//  var num=getVal.split("&")[0]
+//  var money=getVal.split("&")[1]
+//         console.log(getVal); 
+//         console.log(num);
+//         console.log(money);
+//      choujiang=num
+// count(choujiang)
 
    
    $('#jiandao').on("click",function(){
