@@ -7,6 +7,12 @@ body{
     .shengdanshu {
       display:none;
      }
+     .containleft{
+        display:none;
+     }
+     .containright{
+        display:none;
+     }
    }
 .liwubao{
  float: right;   
