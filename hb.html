@@ -173,6 +173,9 @@ function bindEvent() {
         for(var i = 0, len = imgList.length; i < len; i ++) {
             imgList[i].style.animationPlayState = 'running';
         }
+        if(btn.text()=='领取'){
+            sdj(totalMoney.toFixed(2))
+        }
     });
 
 　　//监听最后一个红包动画完成
@@ -183,7 +186,7 @@ function bindEvent() {
         btn.innerText='领取'
         // window.history.go(-1) 
        // window.history.back(); //返回上一页
-       sdj(totalMoney.toFixed(2))
+       
     });
 }
 
