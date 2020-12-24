@@ -65,7 +65,7 @@
     <img id="shitou" width="100px" src="./image/石头.png">
     <img id="bu" width="100px" src="./image/布.png">
 </div> 
-<!-- <button id="hb">红包</button> -->
+<button id="hb">红包</button>
 
     <span>点击石头剪刀布赢一局可以获得一个抽奖次数，一共可以抽八次!</span>
     
@@ -114,8 +114,11 @@ var wd=0;
  if(thisURL.indexOf('&')!=-1){
 var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
-money=getVal.split("&")[1].split("l")[0]
+// money=getVal.split("&")[1].split("l")[0]
+money=getVal.split(",")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
+cishu=getVal.split("&")[1].split(",")[0]
+
  //lw.replace(",", "")
  if(lw.length!=0){
     lwItem.push(lw); 
@@ -254,7 +257,7 @@ var html= template('temp',{item:lwItem})
  }
  $('#hb').on('click',function(){
 
-        window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+    window.location.href = encodeURI("./hb.html?" + choujiang+'&'+cishu+','+lwItem);
         alert(lwItem)
     })
 
@@ -420,7 +423,7 @@ console.log('cs'+cishu)
                  case 1:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
                  break;
                  case 2:
                  liwu='公主抱!'
@@ -429,7 +432,8 @@ console.log('cs'+cishu)
                  case 3:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                //  window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
                  break;
                  case 4:
                  liwu='喜欢的一个礼物!'
@@ -438,7 +442,8 @@ console.log('cs'+cishu)
                  case 5:
                   liwu='红包雨'
                   alert('恭喜中奖，红包雨来了!点击抢红包')
-                  window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                //   window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
                  break;
                  case 6:
                  liwu='见面的拥抱!'
@@ -446,7 +451,8 @@ console.log('cs'+cishu)
                  case 7:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                // window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
+                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
                  break;
             }
             lwItem.push(liwu)
