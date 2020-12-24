@@ -412,7 +412,7 @@ run($('.spin'), generateCirclePath(3, 100), 3)
                  console.log("zj")
                  break;
             }
-            lwItem.push(zj)
+            lwItem.push(String(zj))
             var html= template('temp',{item:lwItem})
               $('#lwlist').html(html)
         }, 4000);
