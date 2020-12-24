@@ -65,9 +65,9 @@
     <img id="shitou" width="100px" src="./image/石头.png">
     <img id="bu" width="100px" src="./image/布.png">
 </div> 
-<button id="hb">红包</button>
+<!-- <button id="hb">红包</button> -->
 
-    <span>点击石头剪刀布赢一局可以获得一个抽奖次数，一共可以抽八次!</span>
+    <span>点击石头剪刀布赢一局可以获得一个抽奖次数，一共可以抽八次</span>
     
 </div>
 <div style="width: 100%; text-align: center;">
@@ -106,7 +106,6 @@ var wd=0;
         var lwItem=[]
         var liwu;
         var money;
-        var cishu=0;
    var thisURL = decodeURI(document.URL);
   console.log(thisURL)	// 获取当前页面的 url, 用decodeURI() 解码
  
@@ -114,11 +113,8 @@ var wd=0;
  if(thisURL.indexOf('&')!=-1){
 var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
-// money=getVal.split("&")[1].split("l")[0]
-money=getVal.split(",")[1].split("l")[0]
+money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
-cishu=getVal.split("&")[1].split(",")[0]
-
  //lw.replace(",", "")
  if(lw.length!=0){
     lwItem.push(lw); 
@@ -130,7 +126,6 @@ cishu=getVal.split("&")[1].split(",")[0]
         console.log(money);
         console.log(lwItem[0]);
         console.log(lw);
-        console.log('cishu'+cishu);
      choujiang=num
 count(choujiang)
 console.log(zj)
@@ -258,7 +253,7 @@ var html= template('temp',{item:lwItem})
  }
  $('#hb').on('click',function(){
 
-    window.location.href = encodeURI("./hb.html?" + choujiang+'&'+cishu+','+lwItem);
+        window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
         alert(lwItem)
     })
 
@@ -414,8 +409,6 @@ $('.start').on('click',debounce(() => {
        alert('抽奖次数用完了!')
     }else{  
 run($('.spin'), generateCirclePath(3, 100), 3)
-cishu++;
-console.log('cs'+cishu)
         setTimeout(() => {
             switch(zj){
                  case 0:
@@ -424,7 +417,7 @@ console.log('cs'+cishu)
                  case 1:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
+                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
                  case 2:
                  liwu='公主抱!'
@@ -433,8 +426,7 @@ console.log('cs'+cishu)
                  case 3:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                //  window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
-                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
+                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
                  case 4:
                  liwu='喜欢的一个礼物!'
@@ -443,8 +435,7 @@ console.log('cs'+cishu)
                  case 5:
                   liwu='红包雨'
                   alert('恭喜中奖，红包雨来了!点击抢红包')
-                //   window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
-                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
+                  window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
                  case 6:
                  liwu='见面的拥抱!'
@@ -452,8 +443,7 @@ console.log('cs'+cishu)
                  case 7:
                  liwu='红包雨'
                  alert('恭喜中奖，红包雨来了!点击抢红包')
-                // window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
-                window.location.href = encodeURI("./hb.html?" + choujiang+'&'+','+cishu+lwItem);
+                 window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
             }
             lwItem.push(liwu)
