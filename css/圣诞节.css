@@ -3,6 +3,11 @@ body{
     /* background-image: url(../image/圣诞节.jpg); */
     background:white;
 }
+@media screen and (max-width:480px){
+    .shengdanshu {
+      display:none;
+     }
+   }
 .liwubao{
  float: right;   
 }
