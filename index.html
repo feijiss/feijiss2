@@ -110,11 +110,11 @@ var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
  var money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
- lwItem= parseInt(lw.replace(",", "")); 
+ lwItem=  lw.replace(",", ""); 
         console.log(getVal); 
         console.log(num);
         console.log(money);
-        console.log(lwItem);
+        console.log(lwItem[0]);
         console.log(lw);
      choujiang=num
 count(choujiang)
@@ -388,28 +388,28 @@ run($('.spin'), generateCirclePath(3, 100), 3)
         setTimeout(() => {
             switch(zj){
                  case 0:
-                console.log(zj)
+                console.log("zj")
                  break;
                  case 1:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 2:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 3:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 4:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 5:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 6:
-                 console.log(zj)
+                 console.log("zj")
                  break;
                  case 7:
-                 console.log(zj)
+                 console.log("zj")
                  break;
             }
             lwItem.push(zj)
