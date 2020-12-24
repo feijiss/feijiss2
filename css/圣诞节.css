@@ -7,10 +7,10 @@ body{
     .shengdanshu {
       display:none;
      }
-     .containleft{
+     #containleft{
         display:none;
      }
-     .containright{
+     #containright{
         display:none;
      }
    }
