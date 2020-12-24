@@ -407,14 +407,12 @@ document.documentElement.addEventListener('touchstart', function (event) {
 $('.start').on('click',debounce(() => { 
     if(choujiang==0){
        alert('抽奖次数用完了!')
-    }else{
+    }else{  
 run($('.spin'), generateCirclePath(3, 100), 3)
         setTimeout(() => {
             switch(zj){
                  case 0:
-                     liwu='红包雨'
-                    
-                     
+                     liwu='么么哒'
                  break;
                  case 1:
                  liwu='红包雨'
@@ -431,7 +429,7 @@ run($('.spin'), generateCirclePath(3, 100), 3)
                  window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
                  case 4:
-                 liwu='红包雨'
+                 liwu='喜欢的一个礼物'
         
                  break;
                  case 5:
@@ -440,7 +438,7 @@ run($('.spin'), generateCirclePath(3, 100), 3)
                   window.location.href = encodeURI("./hb.html?" + choujiang+'&'+lwItem);
                  break;
                  case 6:
-                 liwu='红包雨'
+                 liwu='见面的拥抱'
                  break;
                  case 7:
                  liwu='红包雨'
