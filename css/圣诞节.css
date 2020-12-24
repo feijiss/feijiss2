@@ -15,7 +15,7 @@ body{
 }
 #lwlist li{
     margin-right: 100px;
-    background-color: coral;
+    background: coral;
     width: 100px;
 }
 .wrap{
