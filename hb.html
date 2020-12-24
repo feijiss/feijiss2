@@ -131,7 +131,7 @@ function createDom(num) {
         var img = new Image();
         img.src = './image/hb' + '.png';
         img.style.left = ranNum(0, window.innerWidth) + 'px';      //让红包散列分布
-        var delay = ranNum(0,100) / 10;
+        var delay = ranNum(0,100) / 20;
         img.style.animationDelay = delay + 's';                   //设置红包出现时间
         if(delayTime < delay) {
             delayTime = delay;
