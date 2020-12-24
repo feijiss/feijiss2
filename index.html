@@ -110,11 +110,11 @@ var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
  var money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
- lwItem=lw.replace(",", ""); 
+ lwItem= parseInt(lw.replace(",", "")); 
         console.log(getVal); 
         console.log(num);
         console.log(money);
-        console.log(lwItem[0]);
+        console.log(lwItem);
         console.log(lw);
      choujiang=num
 count(choujiang)
