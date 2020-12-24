@@ -10,7 +10,7 @@ body{
     float: right;
     position: absolute;
     display: none;
-
+margin-right: 100px;
     background: cornflowerblue;
 }
 #lwlist li{
