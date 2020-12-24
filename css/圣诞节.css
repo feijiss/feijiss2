@@ -10,7 +10,11 @@ body{
     float: right;
     position: absolute;
     display: none;
+    
+}
+#lwlist li{
     margin-right: 100px;
+    background-color: coral;
 }
 .wrap{
     text-align: center;
