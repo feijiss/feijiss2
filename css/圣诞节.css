@@ -11,10 +11,10 @@ body{
     position: absolute;
     display: none;
     width: 100px;
-    
+    background: cornflowerblue;
 }
 #lwlist li{
-    margin-right: 100px;
+    
     background: coral;
     
 }
