@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,
-    width=device-width,initial-scale=1.0" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <embed src="sdj.mp3" hidden="true" autostart="true" loop="true">
     <link rel="stylesheet" href="css/圣诞节.css" />
@@ -113,7 +113,10 @@ var getVal = thisURL.split("?")[1];
 money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
  //lw.replace(",", "")
- lwItem.push(lw); 
+ if(lw.length!=0){
+    lwItem.push(lw); 
+ }
+
  lwItem.push('红包雨:'+money); 
         console.log(getVal); 
         console.log(num);
