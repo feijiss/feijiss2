@@ -101,6 +101,7 @@ var wd=0;
     var choujiang=0
     var zj;
         var lwItem=[]
+        var liwu;
    var thisURL = decodeURI(document.URL);
   console.log(thisURL)	// 获取当前页面的 url, 用decodeURI() 解码
  
@@ -388,31 +389,32 @@ run($('.spin'), generateCirclePath(3, 100), 3)
         setTimeout(() => {
             switch(zj){
                  case 0:
+                     liwu='红包雨'
                 console.log("zj")
                  break;
                  case 1:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
                  case 2:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
                  case 3:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
                  case 4:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
                  case 5:
-                 console.log("zj")
+                  liwu='红包雨'
                  break;
                  case 6:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
                  case 7:
-                 console.log("zj")
+                 liwu='红包雨'
                  break;
             }
-            lwItem.push(String(zj))
+            lwItem.push(liwu)
             var html= template('temp',{item:lwItem})
               $('#lwlist').html(html)
         }, 4000);
