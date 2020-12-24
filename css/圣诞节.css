@@ -23,7 +23,8 @@ body{
     display: none;
     right:10px;
     width:200px;
-    border:1px solid #a5b6c8;background:#eef3f7
+    border:1px solid #a5b6c8;background:#eef3f7;
+    z-index:1
 }
 #lwlist li{
     
