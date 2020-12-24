@@ -3,7 +3,7 @@ body{
     /* background-image: url(../image/圣诞节.jpg); */
     background:white;
 }
-@media screen and (max-width:480px){
+@media screen and (max-width:600px){
     .shengdanshu {
       display:none;
      }
