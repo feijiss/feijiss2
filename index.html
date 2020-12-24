@@ -102,6 +102,7 @@ var wd=0;
     var zj;
         var lwItem=[]
         var liwu;
+        var money;
    var thisURL = decodeURI(document.URL);
   console.log(thisURL)	// 获取当前页面的 url, 用decodeURI() 解码
  
@@ -109,10 +110,10 @@ var wd=0;
  if(thisURL.indexOf('&')!=-1){
 var getVal = thisURL.split("?")[1];
  var num=getVal.split("&")[0]
- var money=getVal.split("&")[1].split("l")[0]
+money=getVal.split("&")[1].split("l")[0]
  var lw=getVal.split("&")[1].split("l")[1]
  //lw.replace(",", "")
- lwItem.push(lw ); 
+ lwItem.push(lw); 
         console.log(getVal); 
         console.log(num);
         console.log(money);
