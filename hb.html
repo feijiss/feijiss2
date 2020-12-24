@@ -179,7 +179,8 @@ function bindEvent() {
     addEvent(lastImg, 'webkitAnimationEnd', function() {
         modol.style.display = 'block';
         text.innerText = '恭喜总共抢到了' + totalMoney.toFixed(2) + '元';
-        btn.style.display = 'none';
+        //btn.style.display = 'none';
+        btn.innerText='领取'
         // window.history.go(-1) 
        // window.history.back(); //返回上一页
        sdj(totalMoney.toFixed(2))
